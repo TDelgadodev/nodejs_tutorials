@@ -1,4 +1,5 @@
 const sharp = require("sharp");
+const { logError } = require("../utils/logger");
 
 async function addTextOnImage() {
   try {
@@ -26,7 +27,7 @@ async function addTextOnImage() {
       .toFile("sammy-text-overlay.png");
       console.log(image);
   } catch (error) {
-    console.log(error);
+    logError(error);
   }
 }
 

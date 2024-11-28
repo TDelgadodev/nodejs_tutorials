@@ -1,4 +1,5 @@
 const sharp = require("sharp");
+const { logError } = require("../utils/logger");
 
 async function resizeImage() {
   try {
@@ -10,7 +11,7 @@ async function resizeImage() {
       .toFormat("jpeg", { mozjpeg: true })
       .toFile("sammy-resized-compressed.jpeg")
   } catch (error) {
-    console.log(error);
+    logError(error);
   }
 }
 

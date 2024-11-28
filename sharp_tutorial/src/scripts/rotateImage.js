@@ -1,4 +1,5 @@
 const sharp = require("sharp");
+const { logError } = require("../utils/logger");
 
 async function rotateImage() {
   try {
@@ -7,7 +8,7 @@ async function rotateImage() {
       .blur(4)
       .toFile("sammy-rotated-blurred.png");
   } catch (error) {
-    console.log(error);
+    logError(error);
   }
 }
 

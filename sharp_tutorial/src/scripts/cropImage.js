@@ -1,4 +1,5 @@
 const sharp = require("sharp");
+const { logError } = require("../utils/logger");
 
 async function cropImage() {
   try {
@@ -7,7 +8,7 @@ async function cropImage() {
       .grayscale()
       .toFile("sammy-cropped-grayscale.png");
   } catch (error) {
-    console.log(error);
+    logError(error);
   }
 }
 

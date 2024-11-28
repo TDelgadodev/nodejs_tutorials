@@ -1,4 +1,5 @@
 const sharp = require("sharp");
+const { logError } = require("../utils/logger");
 
 async function compositeImages() {
   try {
@@ -12,7 +13,7 @@ async function compositeImages() {
       ])
       .toFile("sammy-underwater.png");
   } catch (error) {
-    console.log(error);
+    logError(error);
   }
 }
 
